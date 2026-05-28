@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MyColor - Paletas</title>
+<link rel="stylesheet" href="css/style.css">
+
+<script>
+/* PROTEÇÃO DE LOGIN */
+if(localStorage.getItem("usuarioLogado") !== "true"){
+    window.location.href = "login.html";
+}
+</script>
+
+</head>
+<body>
+
+<header class="topo">
+    <div class="logo-area">
+        <div class="logo-icon"></div>
+        <h2 class="logo">MyColor</h2>
+    </div>
+
+    <nav class="menu">
+        <a href="index.html" class="ativo">Paletas</a>
+        <a href="fabrica-layout.html">Fábrica de layouts</a>
+            </nav>
+
+    <!-- AGORA É LOGOUT -->
+    <a href="#" class="menu-icon" onclick="logout()">X</a>
+</header>
+
+<section class="hero">
+    <h1>Encontre a paleta ideal para seu projeto</h1>
+    <p>Gere, explore e analise combinações de cores para interfaces, marcas de layouts.</p>
+
+    <div class="busca">
+        <input type="text" placeholder="Digite uma cor, estilo ou tema">
+        <button>Gerar</button>
+    </div>
+
+    <span class="exemplo">'moderno', 'azul institucional', 'tech', 'minimalista'</span>
+
+    <div class="filtros">
+        <div class="filtro">Categoria ▾</div>
+        <div class="filtro">Ordenar por ▾</div>
+        <div class="filtro">Mais usadas</div>
+        <div class="filtro">Buscar HEX</div>
+    </div>
+</section>
+
+<main class="paletas-container">
+
+    <!-- CORPORATIVO -->
+    <div class="paleta-card">
+        <h3>Paleta Corporativa Azul</h3>
+
+        <div class="grupo-paletas">
+            <div class="linha">
+                <span style="background:#0D1B2A"></span>
+                <span style="background:#1B263B"></span>
+                <span style="background:#415A77"></span>
+                <span style="background:#778DA9"></span>
+                <span style="background:#E0E1DD"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#14213D"></span>
+                <span style="background:#1F3C88"></span>
+                <span style="background:#3A86FF"></span>
+                <span style="background:#A8DADC"></span>
+                <span style="background:#F1FAEE"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#0B132B"></span>
+                <span style="background:#1C2541"></span>
+                <span style="background:#3A506B"></span>
+                <span style="background:#5BC0BE"></span>
+                <span style="background:#CDEDF6"></span>
+            </div>
+        </div>
+
+        <button class="btn-analisar">Analisar</button>
+    </div>
+
+    <!-- ESCURA -->
+    <div class="paleta-card">
+        <h3>Paleta Escura Moderna</h3>
+
+        <div class="grupo-paletas">
+            <div class="linha">
+                <span style="background:#191D32"></span>
+                <span style="background:#282F44"></span>
+                <span style="background:#453A49"></span>
+                <span style="background:#6D3B47"></span>
+                <span style="background:#F14068"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#0F0F0F"></span>
+                <span style="background:#232323"></span>
+                <span style="background:#393E46"></span>
+                <span style="background:#00ADB5"></span>
+                <span style="background:#EEEEEE"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#1A1A2E"></span>
+                <span style="background:#16213E"></span>
+                <span style="background:#0F3460"></span>
+                <span style="background:#E94560"></span>
+                <span style="background:#53354A"></span>
+            </div>
+        </div>
+
+        <button class="btn-analisar">Analisar</button>
+    </div>
+
+    <!-- TECH -->
+    <div class="paleta-card">
+        <h3>Paleta Tech</h3>
+
+        <div class="grupo-paletas">
+            <div class="linha">
+                <span style="background:#001B79"></span>
+                <span style="background:#001BC5"></span>
+                <span style="background:#003CFF"></span>
+                <span style="background:#00CFFF"></span>
+                <span style="background:#D6EFFF"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#0F2027"></span>
+                <span style="background:#203A43"></span>
+                <span style="background:#2C5364"></span>
+                <span style="background:#00F5D4"></span>
+                <span style="background:#C0FFF4"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#03045E"></span>
+                <span style="background:#0077B6"></span>
+                <span style="background:#00B4D8"></span>
+                <span style="background:#90E0EF"></span>
+                <span style="background:#CAF0F8"></span>
+            </div>
+        </div>
+
+        <button class="btn-analisar">Analisar</button>
+    </div>
+
+    <!-- CRIATIVA -->
+    <div class="paleta-card">
+        <h3>Paleta Criativa</h3>
+
+        <div class="grupo-paletas">
+            <div class="linha">
+                <span style="background:#FF0075"></span>
+                <span style="background:#FF5677"></span>
+                <span style="background:#FF8FAB"></span>
+                <span style="background:#FFD6A5"></span>
+                <span style="background:#FDFFB6"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#8338EC"></span>
+                <span style="background:#FF006E"></span>
+                <span style="background:#FB5607"></span>
+                <span style="background:#FFBE0B"></span>
+                <span style="background:#3A86FF"></span>
+            </div>
+
+            <div class="linha">
+                <span style="background:#06D6A0"></span>
+                <span style="background:#1B9AAA"></span>
+                <span style="background:#EF476F"></span>
+                <span style="background:#FFC43D"></span>
+                <span style="background:#F8FFE5"></span>
+            </div>
+        </div>
+
+        <button class="btn-analisar">Analisar</button>
+    </div>
+
+</main>
+
+<!-- BOTÃO CHAT -->
+<div class="chat-btn" onclick="abrirChat()">💬</div>
+
+<!-- CHAT -->
+<div class="chat-overlay" id="chat">
+    <div class="chat-box">
+        <span class="fechar" onclick="fecharChat()">✖</span>
+
+        <div class="chat-mensagens">
+            
+        </div>
+
+        <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button>Enviar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function abrirChat(){
+    document.getElementById("chat").style.display = "flex";
+}
+
+function fecharChat(){
+    document.getElementById("chat").style.display = "none";
+}
+
+/* LOGOUT */
+function logout(){
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "login.html";
+}
+
+</script>
+<script src="js/chat.js"></script>
+</body>
+</html>

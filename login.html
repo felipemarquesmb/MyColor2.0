@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>Login - MyColor</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+
+<h1 class="logo">MyColor</h1>
+
+<div class="login-box">
+
+<form onsubmit="login(event)">
+
+<input type="email" id="email" placeholder="E-mail" required>
+
+<input type="password" id="senha" placeholder="Senha" required>
+
+<div class="links">
+<a href="recuperar.html">Esqueci minha senha</a>
+</div>
+
+<button type="submit" class="btn">Entrar</button>
+
+<p class="cadastro">
+Não possui uma conta? <a href="cadastro.html">Cadastre-se</a>
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+function login(e){
+e.preventDefault();
+
+let email = document.getElementById("email").value;
+let senha = document.getElementById("senha").value;
+
+/* LOGIN SIMPLES */
+if(email === "admin@email.com" && senha === "123456"){
+
+    localStorage.setItem("usuarioLogado", "true");
+
+    window.location.href = "index.html";
+
+}else{
+    alert("Email ou senha incorretos");
+}
+}
+</script>
+
+</body>
+</html>

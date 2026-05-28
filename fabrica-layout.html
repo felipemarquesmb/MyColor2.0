@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Fábrica de Layouts</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="topo">
+    <div class="logo-area">
+        <div class="logo-icon"></div>
+        <h2 class="logo">MyColor</h2>
+    </div>
+
+    <nav class="menu">
+        <a href="index.html">Paletas</a>
+        <a href="fabrica-layout.html" class="ativo">Fábrica de layouts</a>
+    </nav>
+
+    <a href="login.html" class="menu-icon">X</a>
+</header>
+
+<main class="container">
+
+<h2>Fábrica de Layouts</h2>
+
+<div class="painel-topo">
+
+    <div class="box">
+        <p>Paleta selecionada</p>
+
+        <div class="paleta-fixa">
+            <span style="background:#3A86FF"></span>
+            <span style="background:#8338EC"></span>
+            <span style="background:#FF006E"></span>
+            <span style="background:#FB5607"></span>
+            <span style="background:#FFBE0B"></span>
+        </div>
+    </div>
+
+    <div class="box">
+        <p>Tipo</p>
+
+        <div class="botoes-tipo">
+            <button class="ativo" onclick="mudarLayout('app')">App</button>
+            <button onclick="mudarLayout('site')">Site</button>
+            <button onclick="mudarLayout('dashboard')">Dashboard</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="preview">
+
+    <div class="preview-header">
+        <div class="logo-mini"></div>
+        <div class="menu-mini"></div>
+    </div>
+
+    <div class="preview-body" id="previewBody">
+        <div class="card-mini"></div>
+        <div class="card-mini"></div>
+        <div class="card-mini"></div>
+        <div class="card-mini"></div>
+    </div>
+
+    <div class="preview-footer">
+        <div class="btn-mini"></div>
+    </div>
+
+</div>
+
+<div class="acao">
+    <button class="btn-aplicar">Aplicar paleta</button>
+</div>
+
+</main>
+
+<script>
+function mudarLayout(tipo){
+const preview = document.getElementById("previewBody");
+
+if(tipo === "site") preview.style.gridTemplateColumns = "1fr";
+if(tipo === "app") preview.style.gridTemplateColumns = "1fr 1fr";
+if(tipo === "dashboard") preview.style.gridTemplateColumns = "1fr 1fr 1fr";
+
+/* destaque botão */
+document.querySelectorAll(".botoes-tipo button").forEach(btn => {
+    btn.classList.remove("ativo");
+});
+event.target.classList.add("ativo");
+}
+</script>
+
+</body>
+</html>
