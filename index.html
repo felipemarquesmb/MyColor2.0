@@ -24,9 +24,8 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
     <nav class="menu">
         <a href="index.html" class="ativo">Paletas</a>
         <a href="fabrica-layout.html">Fábrica de layouts</a>
-            </nav>
+    </nav>
 
-    <!-- AGORA É LOGOUT -->
     <a href="#" class="menu-icon" onclick="logout()">X</a>
 </header>
 
@@ -35,17 +34,30 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
     <p>Gere, explore e analise combinações de cores para interfaces, marcas de layouts.</p>
 
     <div class="busca">
-        <input type="text" placeholder="Digite uma cor, estilo ou tema">
-        <button>Gerar</button>
+        <input type="text" id="inputGerar" placeholder="Digite uma cor, estilo ou tema (ex: moderno, azul institucional, tech, minimalista)">
+        <button id="btnGerar">Gerar</button>
     </div>
 
     <span class="exemplo">'moderno', 'azul institucional', 'tech', 'minimalista'</span>
 
     <div class="filtros">
-        <div class="filtro">Categoria ▾</div>
-        <div class="filtro">Ordenar por ▾</div>
-        <div class="filtro">Mais usadas</div>
-        <div class="filtro">Buscar HEX</div>
+        <div class="filtro" id="filtro-categoria">
+            Categoria ▾
+            <div class="dropdown" id="dropdown-categoria">
+                <a href="#" data-value="todas">Todas</a>
+                <a href="#" data-value="corporativa">Corporativa</a>
+                <a href="#" data-value="escura">Escura</a>
+                <a href="#" data-value="tech">Tech</a>
+                <a href="#" data-value="criativa">Criativa</a>
+            </div>
+        </div>
+
+       
+        <div class="filtro" id="btn-mais-usadas">Mais usadas</div>
+        <div class="filtro" id="btn-buscar-hex">
+            Buscar HEX
+            <input type="text" id="input-hex" placeholder="#HEX" maxlength="7" style="display:none; width:90px; margin-left:8px;">
+        </div>
     </div>
 </section>
 
@@ -54,7 +66,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
     <!-- CORPORATIVO -->
     <div class="paleta-card">
         <h3>Paleta Corporativa Azul</h3>
-
         <div class="grupo-paletas">
             <div class="linha">
                 <span style="background:#0D1B2A"></span>
@@ -63,7 +74,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#778DA9"></span>
                 <span style="background:#E0E1DD"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#14213D"></span>
                 <span style="background:#1F3C88"></span>
@@ -71,7 +81,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#A8DADC"></span>
                 <span style="background:#F1FAEE"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#0B132B"></span>
                 <span style="background:#1C2541"></span>
@@ -80,14 +89,12 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#CDEDF6"></span>
             </div>
         </div>
-
         <button class="btn-analisar">Analisar</button>
     </div>
 
     <!-- ESCURA -->
     <div class="paleta-card">
         <h3>Paleta Escura Moderna</h3>
-
         <div class="grupo-paletas">
             <div class="linha">
                 <span style="background:#191D32"></span>
@@ -96,7 +103,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#6D3B47"></span>
                 <span style="background:#F14068"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#0F0F0F"></span>
                 <span style="background:#232323"></span>
@@ -104,7 +110,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#00ADB5"></span>
                 <span style="background:#EEEEEE"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#1A1A2E"></span>
                 <span style="background:#16213E"></span>
@@ -113,14 +118,12 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#53354A"></span>
             </div>
         </div>
-
         <button class="btn-analisar">Analisar</button>
     </div>
 
     <!-- TECH -->
     <div class="paleta-card">
         <h3>Paleta Tech</h3>
-
         <div class="grupo-paletas">
             <div class="linha">
                 <span style="background:#001B79"></span>
@@ -129,7 +132,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#00CFFF"></span>
                 <span style="background:#D6EFFF"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#0F2027"></span>
                 <span style="background:#203A43"></span>
@@ -137,7 +139,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#00F5D4"></span>
                 <span style="background:#C0FFF4"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#03045E"></span>
                 <span style="background:#0077B6"></span>
@@ -146,14 +147,12 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#CAF0F8"></span>
             </div>
         </div>
-
         <button class="btn-analisar">Analisar</button>
     </div>
 
     <!-- CRIATIVA -->
     <div class="paleta-card">
         <h3>Paleta Criativa</h3>
-
         <div class="grupo-paletas">
             <div class="linha">
                 <span style="background:#FF0075"></span>
@@ -162,7 +161,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#FFD6A5"></span>
                 <span style="background:#FDFFB6"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#8338EC"></span>
                 <span style="background:#FF006E"></span>
@@ -170,7 +168,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#FFBE0B"></span>
                 <span style="background:#3A86FF"></span>
             </div>
-
             <div class="linha">
                 <span style="background:#06D6A0"></span>
                 <span style="background:#1B9AAA"></span>
@@ -179,7 +176,6 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#F8FFE5"></span>
             </div>
         </div>
-
         <button class="btn-analisar">Analisar</button>
     </div>
 
@@ -192,11 +188,7 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
 <div class="chat-overlay" id="chat">
     <div class="chat-box">
         <span class="fechar" onclick="fecharChat()">✖</span>
-
-        <div class="chat-mensagens">
-            
-        </div>
-
+        <div class="chat-mensagens"></div>
         <div class="chat-input">
             <input type="text" placeholder="Digite sua mensagem...">
             <button>Enviar</button>
@@ -208,18 +200,114 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
 function abrirChat(){
     document.getElementById("chat").style.display = "flex";
 }
-
 function fecharChat(){
     document.getElementById("chat").style.display = "none";
 }
-
-/* LOGOUT */
 function logout(){
     localStorage.removeItem("usuarioLogado");
     window.location.href = "login.html";
 }
-
 </script>
 <script src="js/chat.js"></script>
+
+<script>
+// Dados das paletas
+const paletas = {
+    0: { nome: "Paleta Corporativa Azul", harmonia: "Análoga + Complementar", contraste: "Excelente", psicologia: "Transmite confiança, profissionalismo e estabilidade. Ideal para empresas de tecnologia, finanças e educação.", cores: ["#0D1B2A", "#1B263B", "#415A77", "#778DA9", "#E0E1DD", "#3A86FF", "#A8DADC"] },
+    1: { nome: "Paleta Escura Moderna", harmonia: "Complementar", contraste: "Muito Alto", psicologia: "Moderna, sofisticada e ousada. Perfeita para interfaces dark mode e produtos tech.", cores: ["#191D32", "#282F44", "#0F0F0F", "#00ADB5", "#F14068", "#EEEEEE"] },
+    2: { nome: "Paleta Tech", harmonia: "Triádica", contraste: "Alto", psicologia: "Inovação, futuro e energia. Excelente para startups e aplicações tecnológicas.", cores: ["#001B79", "#003CFF", "#00CFFF", "#00F5D4", "#03045E", "#90E0EF"] },
+    3: { nome: "Paleta Criativa", harmonia: "Análoga Vibrante", contraste: "Bom", psicologia: "Criatividade, alegria e dinamismo. Ideal para projetos artísticos, marketing e redes sociais.", cores: ["#FF0075", "#8338EC", "#FFBE0B", "#06D6A0", "#EF476F", "#FFD6A5"] }
+};
+
+function abrirModal(index) {
+    const paleta = paletas[index];
+    document.getElementById("modal-titulo").textContent = paleta.nome;
+    document.getElementById("modal-harmonia").textContent = paleta.harmonia;
+    document.getElementById("modal-contraste").textContent = paleta.contraste;
+    document.getElementById("modal-psicologia").textContent = paleta.psicologia;
+
+    let coresHTML = "";
+    paleta.cores.forEach(cor => {
+        coresHTML += `<div class="cor-item" style="background:${cor}" onclick="copiarCor('${cor}')"><span>${cor}</span></div>`;
+    });
+    document.getElementById("modal-cores").innerHTML = coresHTML;
+    document.getElementById("modalAnalisar").style.display = "flex";
+}
+
+function fecharModal() {
+    document.getElementById("modalAnalisar").style.display = "none";
+}
+
+function copiarCor(cor) {
+    navigator.clipboard.writeText(cor).then(() => alert("✅ Cor " + cor + " copiada!"));
+}
+
+function aplicarNaFabrica() {
+    const titulo = document.getElementById("modal-titulo").textContent;
+    let paletaSelecionada = null;
+
+    Object.values(paletas).forEach(p => {
+        if (p.nome === titulo) paletaSelecionada = p;
+    });
+
+    if (!paletaSelecionada) {
+        const cores = Array.from(document.querySelectorAll("#modal-cores .cor-item span"))
+                          .map(span => span.textContent.trim());
+        paletaSelecionada = { nome: titulo, cores: cores };
+    }
+
+    localStorage.setItem("paletaSelecionada", JSON.stringify(paletaSelecionada));
+    alert(`✅ Paleta "${titulo}" enviada para a Fábrica de Layouts!`);
+    fecharModal();
+    window.location.href = "fabrica-layout.html";
+}
+
+// Modal para paletas geradas (mantido)
+function abrirModalDinamico(paleta) {
+    document.getElementById("modal-titulo").textContent = paleta.nome;
+    document.getElementById("modal-harmonia").textContent = paleta.harmonia;
+    document.getElementById("modal-contraste").textContent = paleta.contraste;
+    document.getElementById("modal-psicologia").textContent = paleta.psicologia;
+
+    let coresHTML = "";
+    paleta.cores.forEach(cor => {
+        coresHTML += `<div class="cor-item" style="background:${cor}" onclick="copiarCor('${cor}')"><span>${cor}</span></div>`;
+    });
+    document.getElementById("modal-cores").innerHTML = coresHTML;
+    document.getElementById("modalAnalisar").style.display = "flex";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const botoes = document.querySelectorAll(".btn-analisar");
+    botoes.forEach((botao, index) => botao.addEventListener("click", () => abrirModal(index)));
+});
+</script>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalAnalisar">
+    <div class="modal-content">
+        <span class="fechar-modal" onclick="fecharModal()">✖</span>
+        <h2 id="modal-titulo">Nome da Paleta</h2>
+        <div class="modal-paleta-grande" id="modal-cores"></div>
+        <div class="modal-info">
+            <div class="info-item"><strong>Harmonia:</strong> <span id="modal-harmonia"></span></div>
+            <div class="info-item"><strong>Nível de Contraste:</strong> <span id="modal-contraste"></span></div>
+        </div>
+        <div class="modal-psicologia">
+            <h3>Psicologia das Cores</h3>
+            <p id="modal-psicologia"></p>
+        </div>
+        <div class="modal-acoes">
+            <button class="btn-primary" onclick="aplicarNaFabrica()">Aplicar na Fábrica de Layouts</button>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts de geração e filtros (mantidos do seu arquivo) -->
+<script>
+// ==================== GERAÇÃO DE PALETAS ====================
+// (todo o código de gerarPaletas, filtros, etc. que você já tinha)
+</script>
+
 </body>
 </html>

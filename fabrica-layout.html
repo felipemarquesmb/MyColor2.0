@@ -2,8 +2,237 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Fábrica de Layouts</title>
+<title>Fábrica de Layouts - MyColor</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* Estilos específicos para a Fábrica */
+body {
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e1dd;
+}
+
+.container { max-width: 1280px; margin: 0 auto; padding: 2rem; }
+
+/* ==================== MODAL - PERSONALIZAR LAYOUT ==================== */
+.modal-layout {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 15, 35, 0.96);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content-layout {
+    background: #0f1629;
+    width: 94%;
+    max-width: 1020px;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    border: 1px solid #334155;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.fechar-modal-layout {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.fechar-modal-layout:hover { color: #f87171; }
+
+.modal-header {
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #e0e1dd;
+}
+
+/* Layout Preview */
+.layout-preview {
+    flex: 1;
+    background: #0a0f1c;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #334155;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ==================== HEADER MELHORADO ==================== */
+.layout-header {
+    background: #1e2937;
+    padding: 14px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #334155;
+}
+
+.logo-area-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-quadrado {
+    width: 42px;
+    height: 42px;
+    background: #3a86ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.logo-texto {
+    color: #e0e1dd;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.menu-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-mini div {
+    width: 28px;
+    height: 6px;
+    background: #64748b;
+    border-radius: 9999px;
+}
+
+/* Corpo do layout */
+.layout-body {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+.card-principal {
+    flex: 2;
+    background: #1e2937;
+    padding: 24px;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-principal.selecionado {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.3);
+}
+
+.card-secundario {
+    flex: 1;
+    background: #1e2937;
+    padding: 24px;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.card-secundario.selecionado {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.3);
+}
+
+.info-adicional {
+    background: #1e2937;
+    padding: 20px;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.info-adicional.selecionado {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.3);
+}
+
+/* Botões */
+.botoes-acao {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.btn-acao-principal {
+    background: #3a86ff;
+    color: white;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-acao-principal.selecionado {
+    box-shadow: 0 0 0 4px rgba(58, 134, 255, 0.4);
+}
+
+.btn-cancelar {
+    background: #475569;
+    color: white;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+/* Paleta lateral */
+.paleta-lateral {
+    width: 240px;
+    background: rgba(255,255,255,0.06);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #475569;
+}
+
+.paleta-lateral h4 {
+    margin: 0 0 12px 0;
+    color: #94a3b8;
+}
+
+.paleta-lateral span {
+    width: 100%;
+    height: 54px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+    border: 2px solid transparent;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.paleta-lateral span:hover {
+    transform: scale(1.04);
+    border-color: #64748b;
+}
+</style>
 </head>
 
 <body>
@@ -19,80 +248,187 @@
         <a href="fabrica-layout.html" class="ativo">Fábrica de layouts</a>
     </nav>
 
-    <a href="login.html" class="menu-icon">X</a>
+    <a href="#" class="menu-icon" onclick="logout()">X</a>
 </header>
 
 <main class="container">
+    <h2>Fábrica de Layouts</h2>
 
-<h2>Fábrica de Layouts</h2>
+    <div class="painel-topo">
+        <div class="box">
+            <p>Paleta selecionada</p>
+            <div class="paleta-fixa" id="paletaAtual"></div>
+        </div>
 
-<div class="painel-topo">
-
-    <div class="box">
-        <p>Paleta selecionada</p>
-
-        <div class="paleta-fixa">
-            <span style="background:#3A86FF"></span>
-            <span style="background:#8338EC"></span>
-            <span style="background:#FF006E"></span>
-            <span style="background:#FB5607"></span>
-            <span style="background:#FFBE0B"></span>
+        <div class="box">
+            <p>Tipo de Layout</p>
+            <div class="botoes-tipo">
+                <button class="ativo" onclick="mudarLayout('app')">App</button>
+                <button onclick="mudarLayout('site')">Site</button>
+                <button onclick="mudarLayout('dashboard')">Dashboard</button>
+            </div>
         </div>
     </div>
 
-    <div class="box">
-        <p>Tipo</p>
-
-        <div class="botoes-tipo">
-            <button class="ativo" onclick="mudarLayout('app')">App</button>
-            <button onclick="mudarLayout('site')">Site</button>
-            <button onclick="mudarLayout('dashboard')">Dashboard</button>
+    <div class="preview" id="previewContainer">
+        <div class="preview-header">
+            <div class="logo-mini"></div>
+            <div class="menu-mini"></div>
+        </div>
+        <div class="preview-body app" id="previewBody"></div>
+        <div class="preview-footer">
+            <div class="btn-mini"></div>
         </div>
     </div>
 
-</div>
-
-<div class="preview">
-
-    <div class="preview-header">
-        <div class="logo-mini"></div>
-        <div class="menu-mini"></div>
+    <div class="acao">
+        <button class="btn-aplicar" onclick="abrirModalLayout()">Aplicar layout</button>
     </div>
-
-    <div class="preview-body" id="previewBody">
-        <div class="card-mini"></div>
-        <div class="card-mini"></div>
-        <div class="card-mini"></div>
-        <div class="card-mini"></div>
-    </div>
-
-    <div class="preview-footer">
-        <div class="btn-mini"></div>
-    </div>
-
-</div>
-
-<div class="acao">
-    <button class="btn-aplicar">Aplicar paleta</button>
-</div>
-
 </main>
 
+<!-- ==================== MODAL ==================== -->
+<div class="modal-layout" id="modalLayout">
+    <div class="modal-content-layout">
+        <span class="fechar-modal-layout" onclick="fecharModalLayout()">✖</span>
+
+        <div class="modal-header">
+            <h2>Personalizar Layout</h2>
+        </div>
+
+        <div style="display: flex; gap: 24px;">
+            <!-- Preview do Layout -->
+            <div class="layout-preview" id="layoutPreviewModal">
+                <!-- Header melhorado -->
+                <div class="layout-header">
+                    <div class="logo-area-header">
+                        <div class="logo-quadrado" data-id="logo" onclick="selecionarElemento(this)">MC</div>
+                        <div class="logo-texto" data-id="logo-texto" onclick="selecionarElemento(this)">MyColor</div>
+                    </div>
+                    <div class="menu-mini" data-id="menu" onclick="selecionarElemento(this)">
+                        <div></div><div></div><div></div>
+                    </div>
+                </div>
+
+                <!-- Corpo -->
+                <div class="layout-body">
+                    <div class="card-principal" data-id="principal" onclick="selecionarElemento(this)">
+                        <strong>Card Principal (Destaque)</strong>
+                    </div>
+                    <div class="card-secundario" data-id="secundario" onclick="selecionarElemento(this)">
+                        <strong>Card Secundário</strong>
+                    </div>
+                </div>
+
+                <!-- Informações -->
+                <div class="info-adicional" data-id="info" onclick="selecionarElemento(this)">
+                    <strong>Informações Adicionais / Detalhes</strong>
+                </div>
+
+                <!-- Botões -->
+                <div class="botoes-acao">
+                    <button class="btn-acao-principal" data-id="botao-principal" onclick="selecionarElemento(this)">Ação Principal</button>
+                    <button class="btn-cancelar" data-id="botao-cancelar" onclick="selecionarElemento(this)">Cancelar</button>
+                </div>
+            </div>
+
+            <!-- Paleta Lateral -->
+            <div class="paleta-lateral">
+                <h4>Paleta Atual</h4>
+                <div id="paletaModal"></div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 24px; color:#94a3b8; font-size:14px;">
+            Clique em uma área do layout → Depois clique em uma cor
+        </div>
+    </div>
+</div>
+
 <script>
-function mudarLayout(tipo){
-const preview = document.getElementById("previewBody");
+// Paleta neutra
+let paletaAtual = ["#1e2937", "#334155", "#475569", "#64748b", "#94a3b8", "#e0e1dd", "#3a86ff"];
+let elementoSelecionado = null;
 
-if(tipo === "site") preview.style.gridTemplateColumns = "1fr";
-if(tipo === "app") preview.style.gridTemplateColumns = "1fr 1fr";
-if(tipo === "dashboard") preview.style.gridTemplateColumns = "1fr 1fr 1fr";
+function atualizarPaletaVisual() {
+    const container = document.getElementById("paletaAtual");
+    container.innerHTML = "";
+    paletaAtual.forEach(cor => {
+        const span = document.createElement("span");
+        span.style.background = cor;
+        span.style.width = "48px";
+        span.style.height = "48px";
+        span.style.borderRadius = "8px";
+        span.style.marginRight = "8px";
+        span.onclick = () => copiarCor(cor);
+        container.appendChild(span);
+    });
+}
 
-/* destaque botão */
-document.querySelectorAll(".botoes-tipo button").forEach(btn => {
-    btn.classList.remove("ativo");
-});
-event.target.classList.add("ativo");
+function abrirModalLayout() {
+    document.getElementById("modalLayout").style.display = "flex";
+    carregarPaletaNoModal();
+}
+
+function carregarPaletaNoModal() {
+    const container = document.getElementById("paletaModal");
+    container.innerHTML = "";
+    paletaAtual.forEach(cor => {
+        const span = document.createElement("span");
+        span.style.background = cor;
+        span.onclick = () => aplicarCor(cor);
+        container.appendChild(span);
+    });
+}
+
+function selecionarElemento(el) {
+    document.querySelectorAll('.layout-preview *').forEach(e => e.classList.remove('selecionado'));
+    el.classList.add('selecionado');
+    elementoSelecionado = el;
+}
+
+function aplicarCor(cor) {
+    if (!elementoSelecionado) {
+        alert("Selecione primeiro uma área do layout.");
+        return;
+    }
+    
+    elementoSelecionado.style.backgroundColor = cor;
+    
+    // Feedback visual
+    const originalBorder = elementoSelecionado.style.borderColor;
+    elementoSelecionado.style.borderColor = "#22c55e";
+    setTimeout(() => {
+        elementoSelecionado.style.borderColor = originalBorder || "#60a5fa";
+    }, 700);
+}
+
+function fecharModalLayout() {
+    document.getElementById("modalLayout").style.display = "none";
+    elementoSelecionado = null;
+}
+
+function copiarCor(cor) {
+    navigator.clipboard.writeText(cor).then(() => alert("✅ Cor copiada: " + cor));
+}
+
+function logout(){
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "login.html";
+}
+
+// Inicialização
+window.onload = () => {
+    atualizarPaletaVisual();
+    mudarLayout("app");
+};
+
+function mudarLayout(tipo) {
+    const previewBody = document.getElementById("previewBody");
+    previewBody.className = `preview-body ${tipo}`;
+    previewBody.innerHTML = tipo === "app" ? 
+        `<div class="card-mini"></div><div class="card-mini"></div>` : 
+        `<div class="card-mini"></div>`;
 }
 </script>
-
 </body>
 </html>
