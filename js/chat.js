@@ -1,29 +1,26 @@
 const apiKey = ""; 
 
-const modelo = "gemini-2.5-flash"; // Recomendado
+const modelo = "gemini-2.5-flash"; 
 
-// ==================== ELEMENTOS DO DOM ====================
+
 const chatMensagens = document.querySelector(".chat-mensagens");
 const inputChat = document.querySelector(".chat-input input");
 const botaoEnviar = document.querySelector(".chat-input button");
 
-// ==================== EVENTOS ====================
+
 botaoEnviar.addEventListener("click", enviarMensagem);
 
 inputChat.addEventListener("keypress", (e) => {
     if (e.key === "Enter") enviarMensagem();
 });
 
-// ==================== FUNÇÃO PRINCIPAL ====================
 async function enviarMensagem() {
     const mensagem = inputChat.value.trim();
     if (!mensagem) return;
 
-    // Adiciona mensagem do usuário
     adicionarMensagemUsuario(mensagem);
     inputChat.value = "";
 
-    // Mostra "Pensando..."
     const msgPensando = adicionarMensagemBot("Pensando...");
 
     try {
@@ -46,7 +43,6 @@ Pergunta: ${mensagem}`
             }
         );
 
-        // Tratamento específico para erro 429 (Rate Limit)
         if (response.status === 429) {
             removerMensagem(msgPensando);
             adicionarMensagemBot("⚠️ Limite de requisições excedido (429).\nAguarde alguns segundos e tente novamente.");
@@ -68,7 +64,6 @@ Pergunta: ${mensagem}`
     }
 }
 
-// ==================== FUNÇÕES AUXILIARES ====================
 function adicionarMensagemUsuario(texto) {
     const msg = criarMensagem(texto, "msg-user");
     chatMensagens.appendChild(msg);
@@ -79,7 +74,7 @@ function adicionarMensagemBot(texto) {
     const msg = criarMensagem(texto, "msg-bot");
     chatMensagens.appendChild(msg);
     rolarParaBaixo();
-    return msg; // retorna para poder remover depois (pensando...)
+    return msg; 
 }
 
 function criarMensagem(texto, classe) {
@@ -99,7 +94,6 @@ function rolarParaBaixo() {
     chatMensagens.scrollTop = chatMensagens.scrollHeight;
 }
 
-// ==================== MENSAGEM INICIAL ====================
 window.addEventListener("load", () => {
     adicionarMensagemBot("Olá! 👋 Sou o assistente do MyColor.\nComo posso te ajudar hoje com cores, paletas ou design?");
 });

@@ -5,7 +5,7 @@
 <title>Fábrica de Layouts - MyColor</title>
 <link rel="stylesheet" href="css/style.css">
 <style>
-/* Estilos específicos para a Fábrica */
+
 body {
     background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
     color: #e0e1dd;
@@ -13,225 +13,8 @@ body {
 
 .container { max-width: 1280px; margin: 0 auto; padding: 2rem; }
 
-/* ==================== MODAL - PERSONALIZAR LAYOUT ==================== */
-.modal-layout {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 15, 35, 0.96);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
 
-.modal-content-layout {
-    background: #0f1629;
-    width: 94%;
-    max-width: 1020px;
-    border-radius: 16px;
-    padding: 24px;
-    position: relative;
-    border: 1px solid #334155;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-}
 
-.fechar-modal-layout {
-    position: absolute;
-    top: 20px;
-    right: 28px;
-    font-size: 32px;
-    cursor: pointer;
-    color: #94a3b8;
-}
-
-.fechar-modal-layout:hover { color: #f87171; }
-
-.modal-header {
-    margin-bottom: 20px;
-}
-
-.modal-header h2 {
-    margin: 0;
-    color: #e0e1dd;
-}
-
-/* Layout Preview */
-.layout-preview {
-    flex: 1;
-    background: #0a0f1c;
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #334155;
-    min-height: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* ==================== HEADER MELHORADO ==================== */
-.layout-header {
-    background: #1e2937;
-    padding: 14px 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #334155;
-}
-
-.logo-area-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-quadrado {
-    width: 42px;
-    height: 42px;
-    background: #3a86ff;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    flex-shrink: 0;
-}
-
-.logo-texto {
-    color: #e0e1dd;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.menu-mini {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.menu-mini div {
-    width: 28px;
-    height: 6px;
-    background: #64748b;
-    border-radius: 9999px;
-}
-
-/* Corpo do layout */
-.layout-body {
-    display: flex;
-    gap: 16px;
-    flex: 1;
-}
-
-.card-principal {
-    flex: 2;
-    background: #1e2937;
-    padding: 24px;
-    border-radius: 12px;
-    border: 3px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-principal.selecionado {
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.3);
-}
-
-.card-secundario {
-    flex: 1;
-    background: #1e2937;
-    padding: 24px;
-    border-radius: 12px;
-    border: 3px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.card-secundario.selecionado {
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.3);
-}
-
-.info-adicional {
-    background: #1e2937;
-    padding: 20px;
-    border-radius: 12px;
-    border: 3px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.info-adicional.selecionado {
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.3);
-}
-
-/* Botões */
-.botoes-acao {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    margin-top: 8px;
-}
-
-.btn-acao-principal {
-    background: #3a86ff;
-    color: white;
-    padding: 14px 36px;
-    border: none;
-    border-radius: 9999px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-acao-principal.selecionado {
-    box-shadow: 0 0 0 4px rgba(58, 134, 255, 0.4);
-}
-
-.btn-cancelar {
-    background: #475569;
-    color: white;
-    padding: 14px 36px;
-    border: none;
-    border-radius: 9999px;
-    cursor: pointer;
-}
-
-/* Paleta lateral */
-.paleta-lateral {
-    width: 240px;
-    background: rgba(255,255,255,0.06);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #475569;
-}
-
-.paleta-lateral h4 {
-    margin: 0 0 12px 0;
-    color: #94a3b8;
-}
-
-.paleta-lateral span {
-    width: 100%;
-    height: 54px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.25s;
-    border: 2px solid transparent;
-    margin-bottom: 8px;
-    display: block;
-}
-
-.paleta-lateral span:hover {
-    transform: scale(1.04);
-    border-color: #64748b;
-}
 </style>
 </head>
 
@@ -263,11 +46,16 @@ body {
         <div class="box">
             <p>Tipo de Layout</p>
             <div class="botoes-tipo">
-                <button class="ativo" onclick="mudarLayout('app')">App</button>
-                <button onclick="mudarLayout('site')">Site</button>
-                <button onclick="mudarLayout('dashboard')">Dashboard</button>
+                <button id="btn-app" class="ativo" onclick="mudarLayout('app')">App</button>
+                <button id="btn-site" onclick="mudarLayout('site')">Site</button>
             </div>
         </div>
+    </div>
+
+    
+    <div class="minhas-paletas">
+        <h3>Minhas Paletas Salvas (máx. 3)</h3>
+        <div class="paletas-salvas-container" id="paletasSalvasContainer"></div>
     </div>
 
     <div class="preview" id="previewContainer">
@@ -286,7 +74,7 @@ body {
     </div>
 </main>
 
-<!-- ==================== MODAL ==================== -->
+
 <div class="modal-layout" id="modalLayout">
     <div class="modal-content-layout">
         <span class="fechar-modal-layout" onclick="fecharModalLayout()">✖</span>
@@ -296,9 +84,7 @@ body {
         </div>
 
         <div style="display: flex; gap: 24px;">
-            <!-- Preview do Layout -->
             <div class="layout-preview" id="layoutPreviewModal">
-                <!-- Header melhorado -->
                 <div class="layout-header">
                     <div class="logo-area-header">
                         <div class="logo-quadrado" data-id="logo" onclick="selecionarElemento(this)">MC</div>
@@ -309,29 +95,11 @@ body {
                     </div>
                 </div>
 
-                <!-- Corpo -->
-                <div class="layout-body">
-                    <div class="card-principal" data-id="principal" onclick="selecionarElemento(this)">
-                        <strong>Card Principal (Destaque)</strong>
-                    </div>
-                    <div class="card-secundario" data-id="secundario" onclick="selecionarElemento(this)">
-                        <strong>Card Secundário</strong>
-                    </div>
-                </div>
-
-                <!-- Informações -->
-                <div class="info-adicional" data-id="info" onclick="selecionarElemento(this)">
-                    <strong>Informações Adicionais / Detalhes</strong>
-                </div>
-
-                <!-- Botões -->
-                <div class="botoes-acao">
-                    <button class="btn-acao-principal" data-id="botao-principal" onclick="selecionarElemento(this)">Ação Principal</button>
-                    <button class="btn-cancelar" data-id="botao-cancelar" onclick="selecionarElemento(this)">Cancelar</button>
-                </div>
+                
+                <div id="modalLayoutBody" class="layout-body"></div>
             </div>
 
-            <!-- Paleta Lateral -->
+            
             <div class="paleta-lateral">
                 <h4>Paleta Atual</h4>
                 <div id="paletaModal"></div>
@@ -345,9 +113,74 @@ body {
 </div>
 
 <script>
-// Paleta neutra
 let paletaAtual = ["#1e2937", "#334155", "#475569", "#64748b", "#94a3b8", "#e0e1dd", "#3a86ff"];
 let elementoSelecionado = null;
+let paletasSalvas = [];
+let layoutAtual = 'app';
+
+function carregarPaletasSalvas() {
+    const salvas = localStorage.getItem("paletasSalvas");
+    if (salvas) paletasSalvas = JSON.parse(salvas);
+    renderizarPaletasSalvas();
+}
+
+function salvarPaleta() {
+    if (paletasSalvas.length >= 3) {
+        alert("Você já atingiu o máximo de 3 paletas salvas.");
+        return;
+    }
+    const nome = prompt("Nome da paleta:", `Paleta ${paletasSalvas.length + 1}`);
+    if (!nome) return;
+    paletasSalvas.push({ nome: nome, cores: [...paletaAtual] });
+    localStorage.setItem("paletasSalvas", JSON.stringify(paletasSalvas));
+    renderizarPaletasSalvas();
+}
+
+function removerPaleta(index) {
+    if (confirm("Remover esta paleta?")) {
+        paletasSalvas.splice(index, 1);
+        localStorage.setItem("paletasSalvas", JSON.stringify(paletasSalvas));
+        renderizarPaletasSalvas();
+    }
+}
+
+function selecionarPaletaSalva(index) {
+    paletaAtual = [...paletasSalvas[index].cores];
+    atualizarPaletaVisual();
+    alert(`✅ Paleta "${paletasSalvas[index].nome}" carregada!`);
+}
+
+function renderizarPaletasSalvas() {
+    const container = document.getElementById("paletasSalvasContainer");
+    container.innerHTML = "";
+
+    paletasSalvas.forEach((paleta, index) => {
+        const card = document.createElement("div");
+        card.className = "paleta-salva-card";
+        card.innerHTML = `
+            <div class="delete-btn" onclick="event.stopImmediatePropagation(); removerPaleta(${index})">×</div>
+            <div class="paleta-mini">
+                ${paleta.cores.slice(0,5).map(cor => `<span style="background:${cor}"></span>`).join('')}
+            </div>
+            <p>${paleta.nome}</p>
+        `;
+        card.onclick = () => selecionarPaletaSalva(index);
+        container.appendChild(card);
+    });
+
+    if (paletasSalvas.length < 3) {
+        const addBtn = document.createElement("div");
+        addBtn.className = "paleta-salva-card";
+        addBtn.style.border = "2px dashed #64748b";
+        addBtn.style.display = "flex";
+        addBtn.style.alignItems = "center";
+        addBtn.style.justifyContent = "center";
+        addBtn.style.color = "#64748b";
+        addBtn.innerHTML = `<strong>+ Salvar Atual</strong>`;
+        addBtn.onclick = salvarPaleta;
+        container.appendChild(addBtn);
+    }
+}
 
 function atualizarPaletaVisual() {
     const container = document.getElementById("paletaAtual");
@@ -367,6 +200,7 @@ function atualizarPaletaVisual() {
 function abrirModalLayout() {
     document.getElementById("modalLayout").style.display = "flex";
     carregarPaletaNoModal();
+    atualizarModalLayoutBody(); 
 }
 
 function carregarPaletaNoModal() {
@@ -391,15 +225,7 @@ function aplicarCor(cor) {
         alert("Selecione primeiro uma área do layout.");
         return;
     }
-    
     elementoSelecionado.style.backgroundColor = cor;
-    
-    // Feedback visual
-    const originalBorder = elementoSelecionado.style.borderColor;
-    elementoSelecionado.style.borderColor = "#22c55e";
-    setTimeout(() => {
-        elementoSelecionado.style.borderColor = originalBorder || "#60a5fa";
-    }, 700);
 }
 
 function fecharModalLayout() {
@@ -416,19 +242,112 @@ function logout(){
     window.location.href = "login.html";
 }
 
-// Inicialização
-window.onload = () => {
-    atualizarPaletaVisual();
-    mudarLayout("app");
-};
-
 function mudarLayout(tipo) {
+    layoutAtual = tipo;
+    
+    document.querySelectorAll('.botoes-tipo button').forEach(btn => {
+        btn.classList.toggle('ativo', btn.id === `btn-${tipo}`);
+    });
+
     const previewBody = document.getElementById("previewBody");
     previewBody.className = `preview-body ${tipo}`;
-    previewBody.innerHTML = tipo === "app" ? 
-        `<div class="card-mini"></div><div class="card-mini"></div>` : 
-        `<div class="card-mini"></div>`;
+
+    if (tipo === 'app') {
+        previewBody.innerHTML = `
+            <div style="background:#2a2a3e; padding:12px; border-radius:12px; display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <div style="width:48px; height:28px; background:#3a86ff; border-radius:6px;"></div>
+                <div style="width:110px; height:8px; background:#64748b; border-radius:9999px;"></div>
+            </div>
+            <div style="display:flex; gap:14px; margin-bottom:24px;">
+                <div class="card-mini" style="flex:1; height:92px; background:#1e2937;"></div>
+                <div class="card-mini" style="flex:1; height:92px; background:#1e2937;"></div>
+            </div>
+            <div style="display:flex; gap:12px; justify-content:center; margin-bottom:28px;">
+                <div style="width:11px; height:11px; background:#64748b; border-radius:50%;"></div>
+                <div style="width:11px; height:11px; background:#64748b; border-radius:50%;"></div>
+                <div style="width:11px; height:11px; background:#64748b; border-radius:50%;"></div>
+                <div style="width:11px; height:11px; background:#64748b; border-radius:50%;"></div>
+            </div>
+            <div class="card-mini" style="height:58px; margin-bottom:16px; background:#1e2937;"></div>
+            <div class="card-mini" style="height:58px; margin-bottom:16px; background:#1e2937;"></div>
+            <div class="card-mini" style="height:38px; width:65%; margin:0 auto; background:#1e2937;"></div>
+        `;
+    } else if (tipo === 'site') {
+        previewBody.innerHTML = `
+            <div style="background:#1e2937; height: 120px; border-radius: 12px; margin-bottom: 20px;"></div>
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+                <div class="card-mini" style="height: 180px; background:#334155;"></div>
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <div class="card-mini" style="height: 80px; background:#475569;"></div>
+                    <div class="card-mini" style="height: 80px; background:#475569;"></div>
+                </div>
+            </div>
+            <div class="card-mini" style="height: 90px; margin-top: 20px; background:#1e2937;"></div>
+        `;
+    } else {
+        previewBody.innerHTML = `<div class="card-mini" style="height:180px; background:#1e2937;"></div>`;
+    }
 }
+
+function atualizarModalLayoutBody() {
+    const body = document.getElementById("modalLayoutBody");
+    body.innerHTML = "";
+
+    if (layoutAtual === 'app') {
+        body.innerHTML = `
+            <div class="layout-body" style="flex-direction: column; gap: 18px; background:#1a1a2e; padding:16px; border-radius:12px;">
+                <div data-id="barra-superior" onclick="selecionarElemento(this)" style="background:#3a86ff; height: 32px; border-radius: 9999px; margin-bottom: 18px; width: 65%; margin-left: auto; margin-right: auto;"></div>
+                <div style="display: flex; gap: 14px; align-items: center;">
+                    <div class="card-principal" data-id="principal" onclick="selecionarElemento(this)" style="flex: 1; height: 110px;"><strong>Card Principal (Destaque)</strong></div>
+                    <div class="card-secundario" data-id="secundario" onclick="selecionarElemento(this)" style="flex: 1; height: 110px;"><strong>Card Secundário</strong></div>
+                    <div data-id="seta-direita" onclick="selecionarElemento(this)" style="width: 32px; height: 32px; background: #64748b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">›</div>
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: center; margin: 12px 0;">
+                    <div data-id="dot1" onclick="selecionarElemento(this)" style="width: 11px; height: 11px; background: #64748b; border-radius: 50%;"></div>
+                    <div data-id="dot2" onclick="selecionarElemento(this)" style="width: 11px; height: 11px; background: #64748b; border-radius: 50%;"></div>
+                    <div data-id="dot3" onclick="selecionarElemento(this)" style="width: 11px; height: 11px; background: #64748b; border-radius: 50%;"></div>
+                    <div data-id="dot4" onclick="selecionarElemento(this)" style="width: 11px; height: 11px; background: #64748b; border-radius: 50%;"></div>
+                </div>
+                <div class="info-adicional" data-id="info1" onclick="selecionarElemento(this)" style="height: 68px;"><strong>Informações Adicionais / Detalhes</strong></div>
+                <div class="info-adicional" data-id="info2" onclick="selecionarElemento(this)" style="height: 68px;"><strong>Informações Adicionais / Detalhes</strong></div>
+                <div data-id="barra-inferior" onclick="selecionarElemento(this)" style="background:#3a86ff; height: 32px; border-radius: 9999px; width: 45%; margin: 0 auto;"></div>
+            </div>
+        `;
+    } else if (layoutAtual === 'site') {
+        body.innerHTML = `
+            <div class="layout-body" style="flex-direction: column; gap: 20px; background:#1a1a2e; padding:20px; border-radius:12px;">
+                <div data-id="hero-banner" onclick="selecionarElemento(this)" style="height: 160px; background: linear-gradient(90deg, #3a86ff, #6366f1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">
+                    <strong>Banner Principal / Hero</strong>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                    <div class="card-principal" data-id="principal1" onclick="selecionarElemento(this)" style="height: 140px;"><strong>Card 1</strong></div>
+                    <div class="card-principal" data-id="principal2" onclick="selecionarElemento(this)" style="height: 140px;"><strong>Card 2</strong></div>
+                    <div class="card-principal" data-id="principal3" onclick="selecionarElemento(this)" style="height: 140px;"><strong>Card 3</strong></div>
+                </div>
+                <div class="info-adicional" data-id="info-principal" onclick="selecionarElemento(this)" style="height: 110px;"><strong>Conteúdo Principal / Seção Grande</strong></div>
+                <div class="botoes-acao" style="margin-top: 10px;">
+                    <button class="btn-acao-principal" data-id="botao-principal" onclick="selecionarElemento(this)">Ação Principal</button>
+                    <button class="btn-cancelar" data-id="botao-secundario" onclick="selecionarElemento(this)">Secundário</button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+window.onload = () => {
+    carregarPaletasSalvas();
+    atualizarPaletaVisual();
+    mudarLayout("app");
+    
+    const paletaSalva = localStorage.getItem("paletaSelecionada");
+    if (paletaSalva) {
+        const paleta = JSON.parse(paletaSalva);
+        if (paleta.cores) {
+            paletaAtual = paleta.cores.slice(0, 7);
+            atualizarPaletaVisual();
+        }
+    }
+};
 </script>
 </body>
 </html>

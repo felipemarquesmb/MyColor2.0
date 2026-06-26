@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="css/style.css">
 
 <script>
-/* PROTEÇÃO DE LOGIN */
+
 if(localStorage.getItem("usuarioLogado") !== "true"){
     window.location.href = "login.html";
 }
@@ -31,39 +31,12 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
 
 <section class="hero">
     <h1>Encontre a paleta ideal para seu projeto</h1>
-    <p>Gere, explore e analise combinações de cores para interfaces, marcas de layouts.</p>
-
-    <div class="busca">
-        <input type="text" id="inputGerar" placeholder="Digite uma cor, estilo ou tema (ex: moderno, azul institucional, tech, minimalista)">
-        <button id="btnGerar">Gerar</button>
-    </div>
-
-    <span class="exemplo">'moderno', 'azul institucional', 'tech', 'minimalista'</span>
-
-    <div class="filtros">
-        <div class="filtro" id="filtro-categoria">
-            Categoria ▾
-            <div class="dropdown" id="dropdown-categoria">
-                <a href="#" data-value="todas">Todas</a>
-                <a href="#" data-value="corporativa">Corporativa</a>
-                <a href="#" data-value="escura">Escura</a>
-                <a href="#" data-value="tech">Tech</a>
-                <a href="#" data-value="criativa">Criativa</a>
-            </div>
-        </div>
-
-       
-        <div class="filtro" id="btn-mais-usadas">Mais usadas</div>
-        <div class="filtro" id="btn-buscar-hex">
-            Buscar HEX
-            <input type="text" id="input-hex" placeholder="#HEX" maxlength="7" style="display:none; width:90px; margin-left:8px;">
-        </div>
-    </div>
+    <p>Gere, explore e analise combinações de cores para interfaces de layouts.</p>
 </section>
 
 <main class="paletas-container">
 
-    <!-- CORPORATIVO -->
+   
     <div class="paleta-card">
         <h3>Paleta Corporativa Azul</h3>
         <div class="grupo-paletas">
@@ -74,25 +47,10 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#778DA9"></span>
                 <span style="background:#E0E1DD"></span>
             </div>
-            <div class="linha">
-                <span style="background:#14213D"></span>
-                <span style="background:#1F3C88"></span>
-                <span style="background:#3A86FF"></span>
-                <span style="background:#A8DADC"></span>
-                <span style="background:#F1FAEE"></span>
-            </div>
-            <div class="linha">
-                <span style="background:#0B132B"></span>
-                <span style="background:#1C2541"></span>
-                <span style="background:#3A506B"></span>
-                <span style="background:#5BC0BE"></span>
-                <span style="background:#CDEDF6"></span>
-            </div>
         </div>
-        <button class="btn-analisar">Analisar</button>
+        <button class="btn-analisar" data-index="0">Analisar</button>
     </div>
 
-    <!-- ESCURA -->
     <div class="paleta-card">
         <h3>Paleta Escura Moderna</h3>
         <div class="grupo-paletas">
@@ -103,88 +61,99 @@ if(localStorage.getItem("usuarioLogado") !== "true"){
                 <span style="background:#6D3B47"></span>
                 <span style="background:#F14068"></span>
             </div>
-            <div class="linha">
-                <span style="background:#0F0F0F"></span>
-                <span style="background:#232323"></span>
-                <span style="background:#393E46"></span>
-                <span style="background:#00ADB5"></span>
-                <span style="background:#EEEEEE"></span>
-            </div>
-            <div class="linha">
-                <span style="background:#1A1A2E"></span>
-                <span style="background:#16213E"></span>
-                <span style="background:#0F3460"></span>
-                <span style="background:#E94560"></span>
-                <span style="background:#53354A"></span>
-            </div>
         </div>
-        <button class="btn-analisar">Analisar</button>
+        <button class="btn-analisar" data-index="1">Analisar</button>
     </div>
 
-    <!-- TECH -->
     <div class="paleta-card">
         <h3>Paleta Tech</h3>
         <div class="grupo-paletas">
             <div class="linha">
                 <span style="background:#001B79"></span>
-                <span style="background:#001BC5"></span>
                 <span style="background:#003CFF"></span>
                 <span style="background:#00CFFF"></span>
-                <span style="background:#D6EFFF"></span>
-            </div>
-            <div class="linha">
-                <span style="background:#0F2027"></span>
-                <span style="background:#203A43"></span>
-                <span style="background:#2C5364"></span>
                 <span style="background:#00F5D4"></span>
-                <span style="background:#C0FFF4"></span>
-            </div>
-            <div class="linha">
-                <span style="background:#03045E"></span>
-                <span style="background:#0077B6"></span>
-                <span style="background:#00B4D8"></span>
                 <span style="background:#90E0EF"></span>
-                <span style="background:#CAF0F8"></span>
             </div>
         </div>
-        <button class="btn-analisar">Analisar</button>
+        <button class="btn-analisar" data-index="2">Analisar</button>
     </div>
 
-    <!-- CRIATIVA -->
     <div class="paleta-card">
         <h3>Paleta Criativa</h3>
         <div class="grupo-paletas">
             <div class="linha">
                 <span style="background:#FF0075"></span>
-                <span style="background:#FF5677"></span>
-                <span style="background:#FF8FAB"></span>
-                <span style="background:#FFD6A5"></span>
-                <span style="background:#FDFFB6"></span>
-            </div>
-            <div class="linha">
                 <span style="background:#8338EC"></span>
-                <span style="background:#FF006E"></span>
-                <span style="background:#FB5607"></span>
                 <span style="background:#FFBE0B"></span>
-                <span style="background:#3A86FF"></span>
-            </div>
-            <div class="linha">
                 <span style="background:#06D6A0"></span>
-                <span style="background:#1B9AAA"></span>
                 <span style="background:#EF476F"></span>
-                <span style="background:#FFC43D"></span>
-                <span style="background:#F8FFE5"></span>
             </div>
         </div>
-        <button class="btn-analisar">Analisar</button>
+        <button class="btn-analisar" data-index="3">Analisar</button>
+    </div>
+
+    
+    <div class="paleta-card" style="display:flex; align-items:center; justify-content:center; min-height:280px; border:2px dashed #64748b; background:rgba(255,255,255,0.05);">
+        <button onclick="abrirModalNovaPaleta()" style="background:none; border:none; font-size:80px; color:#64748b; cursor:pointer;">+</button>
     </div>
 
 </main>
 
-<!-- BOTÃO CHAT -->
 <div class="chat-btn" onclick="abrirChat()">💬</div>
 
-<!-- CHAT -->
+<div class="chat-overlay" id="chat">
+    <div class="chat-box">
+        <span class="fechar" onclick="fecharChat()">✖</span>
+        <div class="chat-mensagens"></div>
+        <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button>Enviar</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modalNovaPaleta">
+    <div class="modal-content" style="max-width:560px;">
+        <span class="fechar-modal" onclick="fecharModalNovaPaleta()">✖</span>
+        <h2>Criar Nova Paleta</h2>
+        
+        <div style="margin:15px 0;">
+            <input type="text" id="inputNovaCor" placeholder="#HEX" maxlength="7" style="width:180px; padding:10px;">
+            <button onclick="adicionarCorPorHex()">OK</button>
+        </div>
+        
+        <div id="novaPaletaCores" style="display:flex; gap:12px; flex-wrap:wrap; margin:20px 0; min-height:140px;"></div>
+        
+        <div class="modal-acoes">
+            <button class="btn-primary" onclick="aplicarNovaNaFabrica()">Aplicar na Fábrica</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-overlay" id="modalAnalisar">
+    <div class="modal-content">
+        <span class="fechar-modal" onclick="fecharModal()">✖</span>
+        <h2 id="modal-titulo">Nome da Paleta</h2>
+        <div class="modal-paleta-grande" id="modal-cores"></div>
+        <div class="modal-info">
+            <div class="info-item"><strong>Harmonia:</strong> <span id="modal-harmonia"></span></div>
+            <div class="info-item"><strong>Nível de Contraste:</strong> <span id="modal-contraste"></span></div>
+        </div>
+        <div class="modal-psicologia">
+            <h3>Psicologia das Cores</h3>
+            <p id="modal-psicologia"></p>
+        </div>
+        <div class="modal-acoes">
+            <button class="btn-primary" onclick="aplicarNaFabrica()">Aplicar na Fábrica de Layouts</button>
+        </div>
+    </div>
+</div>
+
+<div class="chat-btn" onclick="abrirChat()">💬</div>
+
+
 <div class="chat-overlay" id="chat">
     <div class="chat-box">
         <span class="fechar" onclick="fecharChat()">✖</span>
@@ -211,13 +180,19 @@ function logout(){
 <script src="js/chat.js"></script>
 
 <script>
-// Dados das paletas
+function abrirChat(){ document.getElementById("chat").style.display = "flex"; }
+function fecharChat(){ document.getElementById("chat").style.display = "none"; }
+function logout(){ localStorage.removeItem("usuarioLogado"); window.location.href = "login.html"; }
+
+
 const paletas = {
-    0: { nome: "Paleta Corporativa Azul", harmonia: "Análoga + Complementar", contraste: "Excelente", psicologia: "Transmite confiança, profissionalismo e estabilidade. Ideal para empresas de tecnologia, finanças e educação.", cores: ["#0D1B2A", "#1B263B", "#415A77", "#778DA9", "#E0E1DD", "#3A86FF", "#A8DADC"] },
-    1: { nome: "Paleta Escura Moderna", harmonia: "Complementar", contraste: "Muito Alto", psicologia: "Moderna, sofisticada e ousada. Perfeita para interfaces dark mode e produtos tech.", cores: ["#191D32", "#282F44", "#0F0F0F", "#00ADB5", "#F14068", "#EEEEEE"] },
-    2: { nome: "Paleta Tech", harmonia: "Triádica", contraste: "Alto", psicologia: "Inovação, futuro e energia. Excelente para startups e aplicações tecnológicas.", cores: ["#001B79", "#003CFF", "#00CFFF", "#00F5D4", "#03045E", "#90E0EF"] },
-    3: { nome: "Paleta Criativa", harmonia: "Análoga Vibrante", contraste: "Bom", psicologia: "Criatividade, alegria e dinamismo. Ideal para projetos artísticos, marketing e redes sociais.", cores: ["#FF0075", "#8338EC", "#FFBE0B", "#06D6A0", "#EF476F", "#FFD6A5"] }
+    0: { nome: "Paleta Corporativa Azul", harmonia: "Análoga + Complementar", contraste: "Excelente", psicologia: "Transmite confiança, profissionalismo e estabilidade.", cores: ["#0D1B2A", "#1B263B", "#415A77", "#778DA9", "#E0E1DD", "#3A86FF"] },
+    1: { nome: "Paleta Escura Moderna", harmonia: "Complementar", contraste: "Muito Alto", psicologia: "Moderna, sofisticada e ousada.", cores: ["#191D32", "#282F44", "#453A49", "#6D3B47", "#F14068"] },
+    2: { nome: "Paleta Tech", harmonia: "Triádica", contraste: "Alto", psicologia: "Inovação, futuro e energia.", cores: ["#001B79", "#003CFF", "#00CFFF", "#00F5D4", "#90E0EF"] },
+    3: { nome: "Paleta Criativa", harmonia: "Análoga Vibrante", contraste: "Bom", psicologia: "Criatividade, alegria e dinamismo.", cores: ["#FF0075", "#8338EC", "#FFBE0B", "#06D6A0", "#EF476F"] }
 };
+
+let coresNovaPaleta = ["#3A86FF", "#8338EC", "#FFBE0B", "#06D6A0"];
 
 function abrirModal(index) {
     const paleta = paletas[index];
@@ -243,70 +218,79 @@ function copiarCor(cor) {
 }
 
 function aplicarNaFabrica() {
-    const titulo = document.getElementById("modal-titulo").textContent;
-    let paletaSelecionada = null;
-
-    Object.values(paletas).forEach(p => {
-        if (p.nome === titulo) paletaSelecionada = p;
-    });
-
-    if (!paletaSelecionada) {
-        const cores = Array.from(document.querySelectorAll("#modal-cores .cor-item span"))
-                          .map(span => span.textContent.trim());
-        paletaSelecionada = { nome: titulo, cores: cores };
-    }
-
-    localStorage.setItem("paletaSelecionada", JSON.stringify(paletaSelecionada));
-    alert(`✅ Paleta "${titulo}" enviada para a Fábrica de Layouts!`);
+    let cores = [];
+    document.querySelectorAll("#modal-cores .cor-item span").forEach(span => cores.push(span.textContent.trim()));
+    localStorage.setItem("paletaSelecionada", JSON.stringify({nome: document.getElementById("modal-titulo").textContent, cores}));
     fecharModal();
     window.location.href = "fabrica-layout.html";
 }
 
-// Modal para paletas geradas (mantido)
-function abrirModalDinamico(paleta) {
-    document.getElementById("modal-titulo").textContent = paleta.nome;
-    document.getElementById("modal-harmonia").textContent = paleta.harmonia;
-    document.getElementById("modal-contraste").textContent = paleta.contraste;
-    document.getElementById("modal-psicologia").textContent = paleta.psicologia;
+function abrirModalNovaPaleta() {
+    coresNovaPaleta = ["#3A86FF", "#8338EC", "#FFBE0B", "#06D6A0"];
+    document.getElementById("modalNovaPaleta").style.display = "flex";
+    renderizarNovaPaleta();
+}
 
-    let coresHTML = "";
-    paleta.cores.forEach(cor => {
-        coresHTML += `<div class="cor-item" style="background:${cor}" onclick="copiarCor('${cor}')"><span>${cor}</span></div>`;
+function fecharModalNovaPaleta() {
+    document.getElementById("modalNovaPaleta").style.display = "none";
+}
+
+function renderizarNovaPaleta() {
+    const container = document.getElementById("novaPaletaCores");
+    container.innerHTML = "";
+    coresNovaPaleta.forEach((cor, i) => {
+        const div = document.createElement("div");
+        div.style.cssText = `background:${cor}; width:110px; height:110px; border-radius:12px; position:relative;`;
+        div.innerHTML = `
+            <span style="position:absolute; bottom:6px; left:6px; background:rgba(0,0,0,0.7); color:white; padding:2px 6px; font-size:11px; border-radius:4px;">${cor}</span>
+            <span onclick="removerCorNova(${i}); event.stopImmediatePropagation();" style="position:absolute; top:6px; right:6px; background:#ef4444; color:white; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; cursor:pointer;">🗑</span>
+        `;
+        container.appendChild(div);
     });
-    document.getElementById("modal-cores").innerHTML = coresHTML;
-    document.getElementById("modalAnalisar").style.display = "flex";
+}
+
+function removerCorNova(index) {
+    if (coresNovaPaleta.length > 3) {
+        coresNovaPaleta.splice(index, 1);
+        renderizarNovaPaleta();
+    } else {
+        alert("A paleta deve ter pelo menos 3 cores.");
+    }
+}
+
+function adicionarCorPorHex() {
+    let hex = document.getElementById("inputNovaCor").value.trim().toUpperCase();
+    if (!/^#[0-9A-F]{6}$/.test(hex)) {
+        alert("HEX inválido! Use formato #RRGGBB");
+        return;
+    }
+    if (!coresNovaPaleta.includes(hex)) {
+        coresNovaPaleta.push(hex);
+        renderizarNovaPaleta();
+    }
+    document.getElementById("inputNovaCor").value = "";
+}
+
+function salvarPaletaPersonalizada() {
+    alert("✅ Paleta salva na sua biblioteca!");
+    fecharModalNovaPaleta();
+}
+
+function aplicarNovaNaFabrica() {
+    localStorage.setItem("paletaSelecionada", JSON.stringify({nome: "Minha Paleta Personalizada", cores: coresNovaPaleta}));
+    fecharModalNovaPaleta();
+    window.location.href = "fabrica-layout.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const botoes = document.querySelectorAll(".btn-analisar");
-    botoes.forEach((botao, index) => botao.addEventListener("click", () => abrirModal(index)));
+    botoes.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const index = parseInt(btn.getAttribute("data-index"));
+            abrirModal(index);
+        });
+    });
 });
-</script>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modalAnalisar">
-    <div class="modal-content">
-        <span class="fechar-modal" onclick="fecharModal()">✖</span>
-        <h2 id="modal-titulo">Nome da Paleta</h2>
-        <div class="modal-paleta-grande" id="modal-cores"></div>
-        <div class="modal-info">
-            <div class="info-item"><strong>Harmonia:</strong> <span id="modal-harmonia"></span></div>
-            <div class="info-item"><strong>Nível de Contraste:</strong> <span id="modal-contraste"></span></div>
-        </div>
-        <div class="modal-psicologia">
-            <h3>Psicologia das Cores</h3>
-            <p id="modal-psicologia"></p>
-        </div>
-        <div class="modal-acoes">
-            <button class="btn-primary" onclick="aplicarNaFabrica()">Aplicar na Fábrica de Layouts</button>
-        </div>
-    </div>
-</div>
-
-<!-- Scripts de geração e filtros (mantidos do seu arquivo) -->
-<script>
-// ==================== GERAÇÃO DE PALETAS ====================
-// (todo o código de gerarPaletas, filtros, etc. que você já tinha)
 </script>
 
 </body>
